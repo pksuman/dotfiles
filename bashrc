@@ -70,7 +70,7 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@h\: \w\a\]$PS1"
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     ;;
 *)
     ;;
@@ -141,3 +141,4 @@ alias gdbme='gdb --args ./nice_example 0 104.131.4.140'
 alias gdbpi='gdb --args ./nice_example 1 104.131.4.140'
 #added 
 alias vil='vi -u ./.vimrc'
+alias gvil='gvim -u ./.vimrc'
