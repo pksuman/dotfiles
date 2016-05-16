@@ -1,0 +1,45 @@
+/* gnome-terminal */
+@define-color terminal_bg #300a24;
+
+TerminalScreen {
+    -TerminalScreen-background-darkness: 0.95;
+    background-color: @terminal_bg;
+    color: #fff;
+}
+
+TerminalScreenContainer .scrollbar:hover:not(.slider),
+TerminalScreenContainer .scrollbar.dragging:not(.slider) {
+    background-color: alpha(@scrollbar_track_color, 0.4);
+}
+
+/* Since .hovering class is not working here, we always use the same radius */
+TerminalScreenContainer .scrollbar.slider.hovering,
+TerminalScreenContainer .scrollbar.slider.dragging {
+    border-radius: 1px;
+}
+
+TerminalScreenContainer .scrollbar {
+    background-color: transparent;
+}
+
+/*Added by Prabhat*/
+@define-color bg-grey #222;
+@define-color active-grey #333;
+@define-color border-grey #555;
+
+
+TerminalWindow .notebook {
+		  border: 0;
+		  padding: 0;
+		  color: #eee;
+		  background-color: shade(@active-grey, 1);
+}
+
+TerminalWindow .notebook tab:active {
+		  border: 0px solid @border-grey;
+		  background-color: shade(@active-grey, 1);
+}
+
+TerminalWindow .notebook tab {
+		  background-color: shade(@bg-grey, 1);
+}
