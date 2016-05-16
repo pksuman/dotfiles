@@ -1,2 +1,2 @@
 # dotfiles
-Contain essential my Linux configuration 
+Contain my essential  Linux configuration 

@@ -15,7 +15,7 @@ set autoindent       "always set autoindenting on
 set ruler            "Always show current position
 set smarttab         "be smart about tab
 set si               "Smart indent
-set wrap             "Wrap lines 
+set wrap             "Wrap lines
 set autoread         "Reload files changed outside vim
 set nocompatible
 filetype on          "enable file type detection
@@ -31,12 +31,24 @@ set colorcolumn=80   "show a visible line at 80 column
 set foldenable  	 "enable folding
 set foldmethod=indent
 set foldlevel=99
+highlight ExtraWhitespace ctermbg=red guibg=red   "show trailing whitespace
+match ExtraWhitespace /\s\+$/           "find trailing white space
 
 let mapleader = "\\" "enable use of backslah as leader
 
 "markdown specific highlight
 "highlight htmlBold gui=bold guifg=#af0000 ctermfg=124
 "highlight htmlItalic gui=italic guifg=#ff8700 ctermfg=214
+"
+"syntastic -recommeneded
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 nnoremap <F2> :TlistToggle<CR>
 nnoremap <F5> :buffers<CR>:buffer<Space>
@@ -65,7 +77,7 @@ if has('gui_running')
 		set columns=80 lines=50 " GUI window geometry
 		set guifont=Monospace\ 12 " font for GUI window
 		set guioptions-=T        " no toolbar
-	    set guitablabel=%t	
+	    set guitablabel=%t
 		set guioptions -=T "Show open tab
 		set shortmess=I
 		set linespace=5      "make underscore visible
@@ -89,7 +101,7 @@ if has('gui_running')
 		set ruler            "Always show current position
 		set smarttab         "be smart about tab
 		set si               "Smart indent
-		set wrap             "Wrap lines 
+		set wrap             "Wrap lines
 		set autoread         "Reload files changed outside vim
 		filetype on          "enable file type detection
 		set title            "show file in titlebar
@@ -106,10 +118,10 @@ if has('gui_running')
 		set foldlevel=99
 		execute pathogen#infect()
 		set runtimepath^=~/.vim/bundle/ctrlp.vim
-
+		match ExtraWhitespace /\s\+$/
 		nnoremap <F2> :TlistToggle<CR>
 		nnoremap <F5> :buffers<CR>:buffer<Space>
-		
+
 		map <C-n> :NERDTreeToggle<CR>
 
 		nnoremap <C-Down> <C-W><C-J>
@@ -133,8 +145,8 @@ endif
 ""Project specific setting.To be enabled by placing a copy of .vimrc file
 ""in diarectory containing project
 ""-----------------------------------------------------------------
-"set exrc
-"set secure
+set exrc
+set secure
 
 "augroup project
 "    autocmd!
@@ -142,6 +154,7 @@ endif
 "augroup END
 
 "set path where gf command work
-"let &path.="src/include,/usr/include/AL," 
+"let &path.="src/include,/usr/include/AL,"   "Don't works!
+"set path+=/home/prabhat/local/libnice/agent  "It works!!
 
 ""------------------------------------------------------------------
