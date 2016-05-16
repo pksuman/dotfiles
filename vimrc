@@ -47,7 +47,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_open = 1  "Diabled bcoz it's warning cover screen 
 let g:syntastic_check_on_wq = 0
 
 nnoremap <F2> :TlistToggle<CR>
@@ -72,6 +72,20 @@ nnoremap <C-t> :tabnew <CR>
 nnoremap <C-Pagedown> :prevtab <CR>
 nnoremap <C-Pageup> :nexttab <CR>
 
+""Project specific setting.To be enabled by placing a copy of .vimrc file
+""in diarectory containing project
+""-----------------------------------------------------------------
+set exrc         "keep enabled
+set secure		 "keep enabled
+"augroup project
+"    autocmd!
+"    autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
+"augroup END
+"set path for vim so gf will work
+"set path+=/home/prabhat/local/libnice/agent
+"set path for syntastic to find header file
+"let g:syntastic_c_include_dirs = [ '/home/prabhat/local/libnice/agent','/home/prabhat/local/include/glib-2.0','/home/prabhat/local/glib/glib']
+""------------------------------------------------------------------
 if has('gui_running')
 		"GUI specific
 		set columns=80 lines=50 " GUI window geometry
@@ -116,6 +130,17 @@ if has('gui_running')
 		set foldenable  	 "enable folding
 		set fdm=indent
 		set foldlevel=99
+			"syntastic -recommeneded
+		set statusline+=%#warningmsg#
+		set statusline+=%{SyntasticStatuslineFlag()}
+		set statusline+=%*
+
+		let g:syntastic_always_populate_loc_list = 1
+		let g:syntastic_auto_loc_list = 1
+		"let g:syntastic_check_on_open = 1  "Diabled bcoz it's warning cover screen
+		let g:syntastic_check_on_wq = 0
+
+
 		execute pathogen#infect()
 		set runtimepath^=~/.vim/bundle/ctrlp.vim
 		match ExtraWhitespace /\s\+$/
@@ -136,25 +161,23 @@ if has('gui_running')
 		nnoremap <C-t> :tabnew <CR>
 		nnoremap <C-Pagedown> :prevtab <CR>
 		nnoremap <C-Pageup> :nexttab <CR>
+
+		""Project specific setting.To be enabled by placing a copy of .vimrc file
+		""in diarectory containing project
+		""-----------------------------------------------------------------
+		set exrc         "keep enabled
+		set secure		 "keep enabled
+		"augroup project
+		"    autocmd!
+		"    autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
+		"augroup END
+		"set path for vim so gf will work
+		"set path+=/home/prabhat/local/libnice/agent
+		"set path for syntastic to find header file
+		"let g:syntastic_c_include_dirs = [ '/home/prabhat/local/libnice/agent','/home/prabhat/local/include/glib-2.0','/home/prabhat/local/glib/glib']
+		""------------------------------------------------------------------
 endif
 
 
 
-"for future consideration
 
-""Project specific setting.To be enabled by placing a copy of .vimrc file
-""in diarectory containing project
-""-----------------------------------------------------------------
-set exrc
-set secure
-
-"augroup project
-"    autocmd!
-"    autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
-"augroup END
-
-"set path where gf command work
-"let &path.="src/include,/usr/include/AL,"   "Don't works!
-"set path+=/home/prabhat/local/libnice/agent  "It works!!
-
-""------------------------------------------------------------------
