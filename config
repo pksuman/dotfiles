@@ -3,6 +3,43 @@
   handle_size = 2
   title_hide_sizetext = True
 [keybindings]
+  broadcast_all = None
+  broadcast_group = None
+  broadcast_off = None
+  close_term = None
+  close_window = None
+  copy = None
+  cycle_next = None
+  cycle_prev = None
+  edit_window_title = None
+  go_down = <Super>Down
+  go_left = <Super>Left
+  go_next = None
+  go_prev = None
+  go_right = <Super>Right
+  go_up = None
+  help = None
+  hide_window = None
+  insert_number = None
+  insert_padded = None
+  layout_launcher = None
+  move_tab_left = None
+  move_tab_right = None
+  prev_tab = None
+  reset = None
+  reset_clear = <Primary>l
+  resize_down = None
+  resize_left = None
+  resize_right = None
+  resize_up = None
+  scaled_zoom = None
+  search = None
+  split_horiz = None
+  split_vert = <Primary><Shift>Up
+  toggle_scrollbar = None
+  toggle_zoom = None
+  ungroup_all = None
+  ungroup_tab = None
 [layouts]
   [[default]]
     [[[child1]]]
