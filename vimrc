@@ -88,7 +88,7 @@ set secure		 "keep enabled
 if has('gui_running')
 		"GUI specific
 		set columns=80 lines=50 " GUI window geometry
-		set guifont=Monospace\ 12 " font for GUI window
+		set guifont=Monospace\ 11 " font for GUI window
 		set guioptions-=T        " no toolbar
 	    set guitablabel=%t
 		set guioptions -=T "Show open tab
