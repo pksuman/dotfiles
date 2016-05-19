@@ -14,6 +14,7 @@ set wildmenu         "visual autocomplete for command menu
 set showmode         "always show what mode we're currently editing in
 set autoindent       "always set autoindenting on
 set ruler            "Always show current position
+set splitright       "split windows on the right"
 set smarttab         "be smart about tab
 set si               "Smart indent
 set wrap             "Wrap lines
@@ -24,6 +25,7 @@ set title            "show file in titlebar
 set autochdir        "set directory as one in which file is opened"
 set magic            "change the backslash are used in search
 set ignorecase       "case insensitive searching
+set t_Co=256          " the terminal has 256 colors
 colorscheme  monokai "fav color scheme
 set background=dark
 set mouse=a          "enable mouse to switch between split screen
