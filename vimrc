@@ -36,17 +36,19 @@ set foldlevel=99
 highlight ExtraWhitespace ctermbg=red guibg=red   "show trailing whitespace
 match ExtraWhitespace /\s\+$/           "find trailing white space
 let mapleader = "\\" "enable use of backslah as leader
-
+ 
+map <silent> <F11>
+\    :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 "------------------------------------------------------------------------------
 "syntastic -recommeneded
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 1  "Diabled bcoz it's warning cover screen
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_check_on_wq = 0
 
 "------------------------------------------------------------------------------
 autocmd! bufwritepost .vimrc source %     " Automatic reloading of .vimrc
