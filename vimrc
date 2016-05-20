@@ -1,6 +1,6 @@
-set nocompatible
-syntax enable        " enable syntax processing
-syntax on
+"set nocompatible
+"syntax enable        " enable syntax processing
+"syntax on
 set tabstop=4        " number of visual spaces per TAB
 set number 		     "Show line number
 set relativenumber             " Show relative line numbers
