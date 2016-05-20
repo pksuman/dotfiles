@@ -1,7 +1,7 @@
 "set nocompatible
 "syntax enable        " enable syntax processing
 "syntax on
-set tabstop=4        " number of visual spaces per TAB
+set tabstop=2        " number of visual spaces per TAB
 set number 		     "Show line number
 set relativenumber             " Show relative line numbers
 set showcmd 		 "Show command in bottom bar
@@ -36,7 +36,7 @@ set foldlevel=99
 highlight ExtraWhitespace ctermbg=red guibg=red   "show trailing whitespace
 match ExtraWhitespace /\s\+$/           "find trailing white space
 let mapleader = "\\" "enable use of backslah as leader
- 
+
 map <silent> <F11>
 \    :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 "------------------------------------------------------------------------------
