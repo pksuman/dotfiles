@@ -53,6 +53,7 @@
   [[default]]
     background_darkness = 0.75
     background_image = None
+    background_type = transparent
     copy_on_selection = True
     custom_command = TERM=xterm-256color bash -l
     font = Monospace 12
