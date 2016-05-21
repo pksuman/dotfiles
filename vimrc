@@ -37,6 +37,8 @@ highlight ExtraWhitespace ctermbg=red guibg=red   "show trailing whitespace
 match ExtraWhitespace /\s\+$/           "find trailing white space
 let mapleader = "\\" "enable use of backslah as leader
 
+au BufNewFile *.c 0r ~/.vim/templates/c.template | let IndentStyle = "c"
+au BufNewFile *.sh 0r ~/.vim/templates/sh.template
 map <silent> <F11>
 \    :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 "------------------------------------------------------------------------------
