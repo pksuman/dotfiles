@@ -63,6 +63,7 @@ map <C-n> :NERDTreeToggle<CR>
 
 nnoremap <F2> :TlistToggle<CR>
 nnoremap <F5> :buffers<CR>:buffer<Space>
+nnoremap <F3> :%s/\s\+$//e<CR> "Remove all trailing white spaces
 
 nnoremap <C-Down> <C-W><C-J>
 nnoremap <C-Up> <C-W><C-K>
