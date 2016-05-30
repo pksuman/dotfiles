@@ -12,12 +12,12 @@
   cycle_next = None
   cycle_prev = None
   edit_window_title = None
-  go_down = <Super>Down
-  go_left = <Super>Left
+  go_down = <Primary>Down
+  go_left = <Primary>Left
   go_next = None
   go_prev = None
-  go_right = <Super>Right
-  go_up = None
+  go_right = <Primary>Right
+  go_up = <Primary>Up
   help = None
   hide_window = None
   insert_number = None
@@ -34,8 +34,8 @@
   resize_up = None
   scaled_zoom = None
   search = None
-  split_horiz = None
-  split_vert = <Primary><Shift>Up
+  split_horiz = <Alt>Left
+  split_vert = <Alt>Up
   toggle_scrollbar = None
   toggle_zoom = None
   ungroup_all = None
@@ -53,7 +53,6 @@
   [[default]]
     background_darkness = 0.75
     background_image = None
-    background_type = transparent
     copy_on_selection = True
     custom_command = TERM=xterm-256color bash -l
     font = Monospace 12
