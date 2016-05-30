@@ -94,6 +94,7 @@ fi
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
+alias lh='ls -Alh' #added by Prabhat on 27 May 2016
 alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -128,7 +129,7 @@ export PATH="/home/prabhat/local/bin:$PATH"
 #other shortcut added by Prabhat
 alias em='emacs -nw'
 alias todo='emacs -nw todo.org'
-alias py='cd /home/prabhat/venv/bin/;source ./activate;cd ~' 
+alias py='cd /home/prabhat/venv/bin/;source ./activate;cd ~'
 alias py2='source venv2/bin/activate'
 alias ipy='ipython --no-banner'
 alias sub='subl'
@@ -139,10 +140,10 @@ alias nepi='./nice_example 1 104.131.4.140'
 alias neme='./nice_example 0 104.131.4.140'
 alias gdbme='gdb --args ./nice_example 0 104.131.4.140'
 alias gdbpi='gdb --args ./nice_example 1 104.131.4.140'
-#added 
+#added
 alias vil='vi -u ./.vimrc'
 alias gvil='gvim -u ./.vimrc'
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
- set -o vi  #enable vi in bash shell
+ #set -o vi  #enable vi in bash shell
