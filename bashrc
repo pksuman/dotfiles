@@ -55,6 +55,10 @@ if [ -n "$force_color_prompt" ]; then
 	color_prompt=
     fi
 fi
+#function to set color
+git_status() {
+				git status 2> /dev/null | awk '{ print $1  }'|sed '2q;d'
+}
 
 #set the color for parse_git_branch
 SET_COLOR="$(echo -e "\033[00;32m")"
