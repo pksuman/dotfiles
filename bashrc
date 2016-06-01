@@ -55,8 +55,17 @@ if [ -n "$force_color_prompt" ]; then
 	color_prompt=
     fi
 fi
-#function to set color
+#function to set color by for exit_code
 
+color_exit_code(){
+				if  [ $? -eq 0 ]; then
+								   echo -e "\033[00;32m"  #green
+        else
+									 echo -e "\033[00;31m"   #red
+				fi
+
+}
+#function to set color
 git_set_color(){
    CHECK_REMOTE="$( git status 2> /dev/null | awk '{ print $1   }'| sed '2q;d'  )"
    if [ "$CHECK_REMOTE" = Your ]; then
@@ -89,7 +98,7 @@ parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w$(git_set_color)$(parse_git_branch)\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w$(git_set_color)$(parse_git_branch)\[\033[0;31m\]\$\[\033[00m\]'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
