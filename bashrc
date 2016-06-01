@@ -56,18 +56,27 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 #function to set color
-git_status() {
-				git status 2> /dev/null | awk '{ print $1  }'|sed '2q;d'
+
+git_set_color(){
+				STATUS="$( git status 2> /dev/null | awk '{ print $1  }'| sed '2q;d' )"
+				if [ "$STATUS" = nothing ]; then
+            echo -e "\033[00;32m"  #green
+				elif [ "$STATUS" = Changes ]; then
+            echo -e "\033[00;33m"   #yellow
+				elif [ "$STATUS" = Untracked ]; then
+            echo -e "\033[00;31m"   #red
+				else
+            echo -e "\033[00;37m"   #white
+				fi
 }
 
 #set the color for parse_git_branch
-SET_COLOR="$(echo -e "\033[00;32m")"
 # Add git branch if its present to PS1
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w${SET_COLOR}$(parse_git_branch)\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w$(git_set_color)$(parse_git_branch)\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
