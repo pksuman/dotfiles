@@ -1,6 +1,6 @@
-"set nocompatible
-"syntax enable        " enable syntax processing
-"syntax on
+set nocompatible
+syntax enable        " enable syntax processing
+syntax on
 set tabstop=2        " number of visual spaces per TAB
 set number 		     "Show line number
 set relativenumber             " Show relative line numbers
@@ -97,7 +97,7 @@ if has('gui_running')
 		set columns=80 lines=50 " GUI window geometry
 		set guifont=Monospace\ 11 " font for GUI window
 		set guioptions-=T        " no toolbar
-	    set guitablabel=%t
+    set guitablabel=%t
 		set guioptions -=T "Show open tab
 		set shortmess=I
 		set linespace=5      "make underscore visible
