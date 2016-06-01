@@ -172,6 +172,7 @@ alias gdbpi='gdb --args ./nice_example 1 104.131.4.140'
 #added
 alias vil='vi -u ./.vimrc'
 alias gvil='gvim -u ./.vimrc'
+alias bc='bc -q'
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
