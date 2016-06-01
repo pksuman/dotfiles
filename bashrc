@@ -58,15 +58,29 @@ fi
 #function to set color
 
 git_set_color(){
-				STATUS="$( git status 2> /dev/null | awk '{ print $1  }'| sed '2q;d' )"
-				if [ "$STATUS" = nothing ]; then
-            echo -e "\033[00;32m"  #green
-				elif [ "$STATUS" = Changes ]; then
-            echo -e "\033[00;33m"   #yellow
-				elif [ "$STATUS" = Untracked ]; then
-            echo -e "\033[00;31m"   #red
-				else
-            echo -e "\033[00;37m"   #white
+				CHECK_REMOTE="$( git status 2> /dev/null | awk '{ print $1   }'| sed '2q;d'  )"
+				if [ "$CHECK_REMOTE" = Your ]; then
+								STATUS="$( git status 2> /dev/null | awk '{ print $1  }'| sed '3q;d' )"
+								if [ "$STATUS" = Untracked ]; then
+												echo -e "\033[00;31m"   #red
+								elif [ "$STATUS" = Changes ]; then
+												echo -e "\033[00;33m"   #yellow
+								elif [ "$STATUS" = nothing ]; then
+												echo -e "\033[00;32m"  #green
+								else
+												echo -e "\033[00;37m"   #white
+								fi
+        else
+								STATUS="$( git status 2> /dev/null | awk '{ print $1  }'| sed '2q;d' )"
+								if [ "$STATUS" = Untracked ]; then
+												echo -e "\033[00;31m"   #red
+								elif [ "$STATUS" = Changes ]; then
+												echo -e "\033[00;33m"   #yellow
+								elif [ "$STATUS" = nothing ]; then
+												echo -e "\033[00;32m"  #green
+								else
+												echo -e "\033[00;37m"   #white
+								fi
 				fi
 }
 
