@@ -43,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -58,33 +58,32 @@ fi
 #function to set color
 
 git_set_color(){
-				CHECK_REMOTE="$( git status 2> /dev/null | awk '{ print $1   }'| sed '2q;d'  )"
-				if [ "$CHECK_REMOTE" = Your ]; then
-								STATUS="$( git status 2> /dev/null | awk '{ print $1  }'| sed '3q;d' )"
-								if [ "$STATUS" = Untracked ]; then
-												echo -e "\033[00;31m"   #red
-								elif [ "$STATUS" = Changes ]; then
-												echo -e "\033[00;33m"   #yellow
-								elif [ "$STATUS" = nothing ]; then
-												echo -e "\033[00;32m"  #green
-								else
-												echo -e "\033[00;37m"   #white for push
-								fi
-        else
-								STATUS="$( git status 2> /dev/null | awk '{ print $1  }'| sed '2q;d' )"
-								if [ "$STATUS" = Untracked ]; then
-												echo -e "\033[00;31m"   #red
-								elif [ "$STATUS" = Changes ]; then
-												echo -e "\033[00;33m"   #yellow
-								elif [ "$STATUS" = nothing ]; then
-												echo -e "\033[00;32m"  #green
-								else
-												echo -e "\033[00;37m"   #white for push
-								fi
-				fi
+   CHECK_REMOTE="$( git status 2> /dev/null | awk '{ print $1   }'| sed '2q;d'  )"
+   if [ "$CHECK_REMOTE" = Your ]; then
+					 STATUS="$( git status 2> /dev/null | awk '{ print $1  }'| sed '3q;d' )"
+					 if [ "$STATUS" = Untracked ]; then
+									 echo -e "\033[00;31m"   #red
+				   elif [ "$STATUS" = Changes ]; then
+								   echo -e "\033[00;33m"   #yellow
+				   elif [ "$STATUS" = nothing ]; then
+								   echo -e "\033[00;32m"  #green
+				   else
+									 echo -e "\033[00;37m"   #white for push
+				   fi
+   else
+           STATUS="$( git status 2> /dev/null | awk '{ print $1  }'| sed '2q;d' )"
+				   if [ "$STATUS" = Untracked ]; then
+								echo -e "\033[00;31m"   #red
+           elif [ "$STATUS" = Changes ]; then
+								echo -e "\033[00;33m"   #yellow
+           elif [ "$STATUS" = nothing ]; then
+								echo -e "\033[00;32m"  #green
+           else
+								echo -e "\033[00;37m"   #white for push
+				   fi
+   fi
 }
 
-#set the color for parse_git_branch
 # Add git branch if its present to PS1
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
@@ -177,3 +176,5 @@ alias bc='bc -q'
 export VISUAL=vim
 export EDITOR="$VISUAL"
  #set -o vi  #enable vi in bash shell
+alias rm="rm --preserve-root" #never rm root directory
+alias c="clear" #never rm root directory
