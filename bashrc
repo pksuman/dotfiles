@@ -59,9 +59,9 @@ fi
 
 color_exit_code(){
 				if  [ $? -eq 0 ]; then
-								   echo -e "\033[00;32m"  #green
+								   echo -e "\033[01;32m"  #green
         else
-									 echo -e "\033[00;31m"   #red
+									 echo -e "\033[01;31m"   #red
 				fi
 
 }
@@ -98,7 +98,7 @@ parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w$(git_set_color)$(parse_git_branch)\[\033[0;31m\]\$\[\033[00m\]'
+    PS1='${debian_chroot:+($debian_chroot)}$(color_exit_code)\u\[\033[00m\]:\[\033[01;34m\]\w$(git_set_color)$(parse_git_branch)\[\033[0;37m\]\$\[\033[00m\]'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
