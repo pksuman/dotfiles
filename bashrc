@@ -68,7 +68,7 @@ git_set_color(){
 								elif [ "$STATUS" = nothing ]; then
 												echo -e "\033[00;32m"  #green
 								else
-												echo -e "\033[00;37m"   #white
+												echo -e "\033[00;37m"   #white for push
 								fi
         else
 								STATUS="$( git status 2> /dev/null | awk '{ print $1  }'| sed '2q;d' )"
@@ -79,7 +79,7 @@ git_set_color(){
 								elif [ "$STATUS" = nothing ]; then
 												echo -e "\033[00;32m"  #green
 								else
-												echo -e "\033[00;37m"   #white
+												echo -e "\033[00;37m"   #white for push
 								fi
 				fi
 }
