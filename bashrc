@@ -98,7 +98,7 @@ parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}$(color_exit_code)\u\[\033[00m\]:\[\033[01;34m\]\w$(git_set_color)$(parse_git_branch)\[\033[0;37m\]\$\[\033[00m\]'
+    PS1='${debian_chroot:+($debian_chroot)}$(color_exit_code)\u\[\033[00m\]:\[\033[01;34m\]\w$(git_set_color)$(parse_git_branch)\n\[\033[0;37m\]\$\[\033[00m\]'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
