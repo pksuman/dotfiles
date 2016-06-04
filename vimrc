@@ -31,7 +31,7 @@ set background=dark
 set mouse=a          "enable mouse to switch between split screen
 set colorcolumn=80   "show a visible line at 80 column
 set foldenable  	 "enable folding
-set foldmethod=indent
+set foldmethod=syntax
 set foldlevel=99
 highlight ExtraWhitespace ctermbg=red guibg=red   "show trailing whitespace
 match ExtraWhitespace /\s\+$/           "find trailing white space
@@ -62,8 +62,9 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 map <C-n> :NERDTreeToggle<CR>
 
 nnoremap <F2> :TlistToggle<CR>
-nnoremap <F5> :buffers<CR>:buffer<Space>
 nnoremap <F3> :%s/\s\+$//e<CR> "Remove all trailing white spaces
+nnoremap <F4> :set paste<CR>i
+nnoremap <F5> :buffers<CR>:buffer<Space>
 
 nnoremap <C-Down> <C-W><C-J>
 nnoremap <C-Up> <C-W><C-K>
