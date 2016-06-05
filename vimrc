@@ -3,7 +3,7 @@ syntax enable        " enable syntax processing
 syntax on
 set tabstop=2        " number of visual spaces per TAB
 set number 		     "Show line number
-set relativenumber             " Show relative line numbers
+"set relativenumber             " Show relative line numbers
 set showcmd 		 "Show command in bottom bar
 set cursorline 	 "highlight currentline
 set showmatch 		 "highlight matching braces
