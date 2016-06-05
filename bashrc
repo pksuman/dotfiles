@@ -67,30 +67,17 @@ color_exit_code(){
 }
 #function to set color
 git_set_color(){
-   CHECK_REMOTE="$( git status 2> /dev/null | awk '{ print $1   }'| sed '2q;d'  )"
-   if [ "$CHECK_REMOTE" = Your ]; then
-					 STATUS="$( git status 2> /dev/null | awk '{ print $1  }'| sed '3q;d' )"
-					 if [ "$STATUS" = Untracked ]; then
-									 echo -e "\033[00;31m"   #red
-				   elif [ "$STATUS" = Changes ]; then
-								   echo -e "\033[00;33m"   #yellow
-				   elif [ "$STATUS" = nothing ]; then
+   UNTRACKED="$( git status --short 2> /dev/null | grep "??" | wc -l )"
+   MODIFIED="$( git status --short 2> /dev/null | grep "M" | wc -l )"
+   if [ "$UNTRACKED" = 0 ]; then
+           if [ "$MODIFIED" = 0 ]; then
 								   echo -e "\033[00;32m"  #green
-				   else
-									 echo -e "\033[00;37m"   #white for push
-				   fi
-   else
-           STATUS="$( git status 2> /dev/null | awk '{ print $1  }'| sed '2q;d' )"
-				   if [ "$STATUS" = Untracked ]; then
-								echo -e "\033[00;31m"   #red
-           elif [ "$STATUS" = Changes ]; then
-								echo -e "\033[00;33m"   #yellow
-           elif [ "$STATUS" = nothing ]; then
-								echo -e "\033[00;32m"  #green
-           else
-								echo -e "\033[00;37m"   #white for push
-				   fi
-   fi
+					 else
+								   echo -e "\033[00;33m"   #yellow
+					 fi
+	else
+				 echo -e "\033[00;31m"   #red
+	fi
 }
 
 # Add git branch if its present to PS1
@@ -182,8 +169,8 @@ alias vil='vi -u ./.vimrc'
 alias gvil='gvim -u ./.vimrc'
 alias bc='bc -q'
 
-export VISUAL=vim
-export EDITOR="$VISUAL"
- #set -o vi  #enable vi in bash shell
+#export VISUAL=vim
+#export EDITOR="$VISUAL"
+#set -o vi  #enable vi in bash shell
 alias rm="rm --preserve-root" #never rm root directory
 alias c="clear" #never rm root directory
