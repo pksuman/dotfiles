@@ -168,6 +168,7 @@ alias gdbpi='gdb --args ./nice_example 1 104.131.4.140'
 alias vil='vi -u ./.vimrc'
 alias gvil='gvim -u ./.vimrc'
 alias bc='bc -q'
+alias gdb='gdb -q -tui'
 
 #export VISUAL=vim
 #export EDITOR="$VISUAL"
