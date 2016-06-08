@@ -74,10 +74,6 @@ nnoremap <C-Left> <C-W><C-H>
 nnoremap <A-Up> :vsplit<CR>
 nnoremap <A-Left> :vnew<CR>
 
-nnoremap <C-t> :tabnew <CR>
-nnoremap <C-Pagedown> :prevtab <CR>
-nnoremap <C-Pageup> :nexttab <CR>
-
 "------------------------------------------------------------------------------
 ""Project specific setting.To be enabled by placing a copy of .vimrc file
 ""in diarectory containing project
