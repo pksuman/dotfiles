@@ -1,2 +1,3 @@
+!Execute "xrdb -merge ~./Xresources" in terminal after making change
 xterm*faceName: DejaVu Sans Mono Book
-xterm*faceSize: 11
+xterm*faceSize: 12
