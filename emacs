@@ -4,7 +4,7 @@
 
 ; turn on Semantic
     (semantic-mode 1)
-; turn on ede mode let's just keep it simple , makefile  
+; turn on ede mode let's just keep it simple , makefile
 ;    (global-ede-mode 1)
 ; turn on automatic reparsing of open buffers in semantic
 ;    (global-semantic-idle-scheduler-mode 1)
@@ -21,14 +21,14 @@
     (global-set-key [f2] 'search-forward)
     (global-set-key [f3] 'undo)
     (global-set-key [f4] "\C-g")
-    
+
     (global-set-key [f5] 'find-file)
-    (global-set-key [f6] 'save-buffer) 
-    (global-set-key [f7] 'kill-buffer) 
+    (global-set-key [f6] 'save-buffer)
+    (global-set-key [f7] 'kill-buffer)
     (global-set-key [f8] 'save-buffers-kill-terminal)
 
- 
-    
+
+
 
 
 
