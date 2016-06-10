@@ -73,6 +73,8 @@ nnoremap <C-Left> <C-W><C-H>
 
 nnoremap <A-Up> :vsplit<CR>
 nnoremap <A-Left> :vnew<CR>
+"switch tab by gt and create one by -->
+nnoremap gn :tabnew<CR>
 
 "------------------------------------------------------------------------------
 ""Project specific setting.To be enabled by placing a copy of .vimrc file
