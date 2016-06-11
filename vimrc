@@ -39,6 +39,7 @@ let mapleader = "\\" "enable use of backslah as leader
 
 au BufNewFile *.c 0r ~/.vim/templates/c.template | let IndentStyle = "c"
 au BufNewFile *.sh 0r ~/.vim/templates/sh.template
+au BufNewFile *.py 0r ~/.vim/templates/py.template
 map <silent> <F11>
 \    :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 "------------------------------------------------------------------------------
