@@ -34,6 +34,7 @@ set colorcolumn=80   "show a visible line at 80 column
 set foldenable  	 "enable folding
 set foldmethod=syntax
 set foldlevel=99
+set shortmess+=I "don't show intro message when starting vim
 highlight ExtraWhitespace ctermbg=red guibg=red   "show trailing whitespace
 match ExtraWhitespace /\s\+$/           "find trailing white space
 let mapleader = "\\" "enable use of backslah as leader
@@ -100,11 +101,6 @@ if has('gui_running')
 		set guioptions-=T        " no toolbar
     set guitablabel=%t
 		set guioptions -=T "Show open tab
-		set shortmess=I
 		set linespace=5      "make underscore visible
 		set cmdheight=2    "avoid pressing Enter to open a file
 endif
-
-
-
-
