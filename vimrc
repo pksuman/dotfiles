@@ -1,7 +1,8 @@
 set nocompatible
 syntax enable        " enable syntax processing
 syntax on
-set tabstop=2        " number of visual spaces per TAB
+set tabstop=4        " number of visual spaces per TAB
+set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 set number 		     "Show line number
 "set relativenumber             " Show relative line numbers
 set hidden          "hide buffer instead of closing it
@@ -19,7 +20,8 @@ set splitright       "split windows on the right"
 set smarttab         "be smart about tab
 set si               "Smart indent
 set wrap             "Wrap lines
-set autoread         "Reload files changed outside vim
+set autoread         "Reload files changed outside vi
+set shiftwidth=4 "using the >> or << commands, shift lines by 4 spaces
 filetype on          "enable file type detection
 filetype plugin on
 set title            "show file in titlebar
@@ -38,7 +40,8 @@ set shortmess+=I "don't show intro message when starting vim
 highlight ExtraWhitespace ctermbg=red guibg=red   "show trailing whitespace
 match ExtraWhitespace /\s\+$/           "find trailing white space
 let mapleader = "\\" "enable use of backslah as leader
-
+" enable all Python syntax highlighting features
+let python_highlight_all = 1
 au BufNewFile *.c 0r ~/.vim/templates/c.template | let IndentStyle = "c"
 au BufNewFile *.sh 0r ~/.vim/templates/sh.template
 au BufNewFile *.py 0r ~/.vim/templates/py.template
@@ -55,11 +58,18 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1  "check syntax even if file is open
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_python_exec = '/usr/bin/python3'
+
+"jedi setting
+"disable jedi
+"let g:jedi#auto_initialization = 0
+
+
 "------------------------------------------------------------------------------
 autocmd! bufwritepost .vimrc source %     " Automatic reloading of .vimrc
 
 execute pathogen#infect()
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+call pathogen#helptags() "generate help tags of installed plugin
 
 "------------------------------------------------------------------------------
 map <C-n> :NERDTreeToggle<CR>
@@ -99,7 +109,7 @@ if has('gui_running')
 		set columns=80 lines=50 " GUI window geometry
 		set guifont=Monospace\ 11 " font for GUI window
 		set guioptions-=T        " no toolbar
-    set guitablabel=%t
+        set guitablabel=%t
 		set guioptions -=T "Show open tab
 		set linespace=5      "make underscore visible
 		set cmdheight=2    "avoid pressing Enter to open a file
