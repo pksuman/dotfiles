@@ -169,6 +169,7 @@ alias vil='vi -u ./.vimrc'
 alias gvil='gvim -u ./.vimrc'
 alias bc='bc -q'
 alias gdb='gdb -q -tui'
+alias dh='df -h'
 
 #export VISUAL=vim
 #export EDITOR="$VISUAL"
