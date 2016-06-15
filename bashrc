@@ -170,6 +170,7 @@ alias gvil='gvim -u ./.vimrc'
 alias bc='bc -q'
 alias gdb='gdb -q -tui'
 alias dh='df -h'
+alias ipy='ipython --nosep'
 
 #export VISUAL=vim
 #export EDITOR="$VISUAL"
