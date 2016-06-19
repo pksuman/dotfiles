@@ -1,8 +1,7 @@
 set nocompatible
 syntax enable        " enable syntax processing
 syntax on
-set tabstop=4        " number of visual spaces per TAB
-set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
+set tabstop=2        " number of visual spaces per TAB
 set number 		     "Show line number
 "set relativenumber             " Show relative line numbers
 set hidden          "hide buffer instead of closing it
@@ -53,15 +52,10 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1  "check syntax even if file is open
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_python_exec = '/usr/bin/python3'
-
-"jedi setting
-"disable jedi
-"let g:jedi#auto_initialization = 0
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1  "check syntax even if file is open
+"let g:syntastic_check_on_wq = 0
 
 
 "------------------------------------------------------------------------------
