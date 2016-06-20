@@ -69,7 +69,8 @@ color_exit_code(){
 git_set_color(){
    UNTRACKED="$( git status --short 2> /dev/null | grep "??" | wc -l )"
    MODIFIED="$( git status --short 2> /dev/null | grep "M" | wc -l )"
-   if [ "$UNTRACKED" = 0 ]; then
+   DELETED="$( git status --short 2> /dev/null | grep "D" | wc -l )"
+   if [[ "$UNTRACKED" -eq 0 && "$DELETED" -eq 0 ]]; then
            if [ "$MODIFIED" = 0 ]; then
 								   echo -e "\033[00;32m"  #green
 					 else
