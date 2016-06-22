@@ -70,8 +70,9 @@ git_set_color(){
    UNTRACKED="$( git status --short 2> /dev/null | grep "??" | wc -l )"
    MODIFIED="$( git status --short 2> /dev/null | grep "M" | wc -l )"
    DELETED="$( git status --short 2> /dev/null | grep "D" | wc -l )"
+   RENAMED="$( git status --short 2> /dev/null | grep "R" | wc -l )"
    if [[ "$UNTRACKED" -eq 0 && "$DELETED" -eq 0 ]]; then
-           if [ "$MODIFIED" = 0 ]; then
+           if [[ "$MODIFIED" -eq 0 && "$RENAMED" -eq 0 ]]; then
 								   echo -e "\033[00;32m"  #green
 					 else
 								   echo -e "\033[00;33m"   #yellow
