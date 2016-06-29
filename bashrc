@@ -71,8 +71,9 @@ git_set_color(){
    MODIFIED="$( git status --short 2> /dev/null | grep "M" | wc -l )"
    DELETED="$( git status --short 2> /dev/null | grep "D" | wc -l )"
    RENAMED="$( git status --short 2> /dev/null | grep "R" | wc -l )"
+   ADDED="$( git status --short 2> /dev/null | grep "A" | wc -l )"
    if [[ "$UNTRACKED" -eq 0 && "$DELETED" -eq 0 ]]; then
-           if [[ "$MODIFIED" -eq 0 && "$RENAMED" -eq 0 ]]; then
+           if [[ "$MODIFIED" -eq 0 && "$RENAMED" -eq 0 && "$ADDED" -eq 0 ]]; then
 								   echo -e "\033[00;32m"  #green
 					 else
 								   echo -e "\033[00;33m"   #yellow
@@ -173,6 +174,10 @@ alias bc='bc -q'
 alias gdb='gdb -q -tui'
 alias dh='df -h'
 alias ipy='ipython --nosep'
+alias jp='jupyter notebook'
+alias bpy='bpython'
+alias k='kill %1'
+alias r='exec bash'
 
 #export VISUAL=vim
 #export EDITOR="$VISUAL"
