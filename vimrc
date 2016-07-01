@@ -14,6 +14,7 @@ set wildmode=longest,list "long autocomplete"
 set wildmenu         "visual autocomplete for command menu
 set showmode         "always show what mode we're currently editing in
 set autoindent       "always set autoindenting on
+set cindent          "strict rule for C programming
 set ruler            "Always show current position
 set splitright       "split windows on the right"
 set smarttab         "be smart about tab
