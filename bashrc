@@ -178,6 +178,8 @@ alias jp='jupyter notebook'
 alias bpy='bpython'
 alias k='kill %1'
 alias r='exec bash'
+alias e='exit'
+alias a='~/art_of_war/shell.sh'
 
 #export VISUAL=vim
 #export EDITOR="$VISUAL"

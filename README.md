@@ -18,6 +18,10 @@ gnome-terminal.css:
   genome-terminal.css contain configuration to make nice new tab in gnome terminal
   location /usr/share/themes/Ambiance/gtk-3.0/apps/gnome-terminal.css
 
+tmux.conf:
+  tmux configuration file
+	locatin ~/
+
 vim:
   vim folder
 
