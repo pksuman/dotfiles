@@ -1,0 +1,12 @@
+#!/bin/bash
+
+date >> ~/todo.mk
+echo "" >> ~/todo.mk
+echo "TODO:" >> ~/todo.mk
+echo "" >> ~/todo.mk
+echo "DONE:">> ~/todo.mk
+echo "" >> ~/todo.mk
+echo "NOTES:">> ~/todo.mk
+echo "" >> ~/todo.mk
+
+
