@@ -123,6 +123,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias lh='ls -Alh' #added by Prabhat on 27 May 2016
 alias l='ls -CF'
+alias ln='stat -c "%a %n" *'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -152,15 +153,16 @@ fi
 export LD_LIBRARY_PATH=/home/prabhat/local/lib
 #added by Prabhat on 19 apr 2016 for bin
 export PATH="/home/prabhat/local/bin:$PATH"
+#for temporary use , remove once NAT testing is over
+export IFNAME=enp1s0
 
 #other shortcut added by Prabhat
 alias em='emacs -nw'
-alias todo='emacs -nw todo.org'
 alias py='cd /home/prabhat/venv/bin/;source ./activate;cd ~'
 alias py2='source venv2/bin/activate'
 alias ipy='ipython --no-banner'
 alias sub='subl'
-alias pi='ssh pioctave@192.168.10.100'
+alias pi='ssh prabhat@192.168.10.100'
 alias sr='ssh prabhat@192.168.10.200'
 alias ti='ssh prabhat@tigris.no-ip.org'
 alias nepi='./nice_example 1 104.131.4.140'
@@ -186,3 +188,6 @@ alias a='~/art_of_war/shell.sh'
 #set -o vi  #enable vi in bash shell
 alias rm="rm --preserve-root" #never rm root directory
 alias c="clear" #never rm root directory
+
+#If core happen then dump the core file
+ulimit -c unlimited
