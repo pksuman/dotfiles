@@ -31,6 +31,7 @@ set ignorecase       "case insensitive searching
 set t_Co=256          " the terminal has 256 colors
 colorscheme  monokai "fav color scheme
 set background=dark
+"hi Normal ctermbg=none "make vim background transparent
 set mouse=a          "enable mouse to switch between split screen
 set colorcolumn=80   "show a visible line at 80 column
 set foldenable  	 "enable folding
@@ -85,6 +86,8 @@ nnoremap <C-Down> <C-W><C-J>
 nnoremap <C-Up> <C-W><C-K>
 nnoremap <C-Right> <C-W><C-L>
 nnoremap <C-Left> <C-W><C-H>
+
+nnoremap <leader>t :hi Normal ctermbg=none !<cr>
 
 nnoremap <A-Up> :vsplit<CR>
 nnoremap <A-Left> :vnew<CR>
