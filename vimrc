@@ -14,7 +14,7 @@ set wildmode=longest,list "long autocomplete"
 set wildmenu         "visual autocomplete for command menu
 set showmode         "always show what mode we're currently editing in
 set autoindent       "always set autoindenting on
-set cindent          "strict rule for C programming
+"set cindent          "strict rule for C programming
 set ruler            "Always show current position
 set splitright       "split windows on the right"
 set smarttab         "be smart about tab
@@ -43,12 +43,16 @@ match ExtraWhitespace /\s\+$/           "find trailing white space
 let mapleader = "\\" "enable use of backslah as leader
 " enable all Python syntax highlighting features
 let python_highlight_all = 1
-
+"------------------------------------------------------------------------------
+"vim remeber line position when reopen files
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 "------------------------------------------------------------------------------
 "file type template
 au BufNewFile *.c 0r ~/.vim/templates/c.template | let IndentStyle = "c"
 au BufNewFile *.sh 0r ~/.vim/templates/sh.template
-au BufNewFile *.py 0r ~/.vim/templates/py.template
+"au BufNewFile *.py 0r ~/.vim/templates/py.template
 
 "file type specific setting
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
