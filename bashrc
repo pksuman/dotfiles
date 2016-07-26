@@ -155,6 +155,7 @@ export LD_LIBRARY_PATH=/home/prabhat/local/lib
 export PATH="/home/prabhat/local/bin:$PATH"
 #for temporary use , remove once NAT testing is over
 export IFNAME=enp1s0
+#export IFNAME=wlp2s0
 
 #other shortcut added by Prabhat
 alias em='emacs -nw'
@@ -183,9 +184,9 @@ alias r='exec bash'
 alias e='exit'
 alias a='~/art_of_war/shell.sh'
 
-#export VISUAL=vim
-#export EDITOR="$VISUAL"
-#set -o vi  #enable vi in bash shell
+export VISUAL=vim
+export EDITOR="$VISUAL"
+set -o vi  #enable vi in bash shell
 alias rm="rm --preserve-root" #never rm root directory
 alias c="clear" #never rm root directory
 

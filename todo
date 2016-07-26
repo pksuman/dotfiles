@@ -1,5 +1,6 @@
 #!/bin/bash
-
+echo "" >> ~/todo.mk
+echo "########################################" >> ~/todo.mk
 date >> ~/todo.mk
 echo "" >> ~/todo.mk
 echo "TODO:" >> ~/todo.mk
