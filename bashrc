@@ -192,3 +192,33 @@ alias c="clear" #never rm root directory
 
 #If core happen then dump the core file
 ulimit -c unlimited
+
+absolute_command() {
+    # List of commands for which history modification is allowed
+    local allowed_commands=("vi" "cd" "mv" "rm")
+
+    # Get the last command without the history number
+    local last_command=$(history 1 | sed 's/^[ ]*[0-9]*[ ]*//')
+
+    # Separate the command and its arguments
+    local command_name=$(echo "$last_command" | awk '{print $1}')
+    local command_args=$(echo "$last_command" | cut -d ' ' -f2-)
+
+    # Check if the command is in the list of allowed commands
+    if [[ " ${allowed_commands[@]} " =~ " ${command_name} " ]]; then
+        # Convert any relative paths in arguments to absolute paths
+        local expanded_args=$(echo "$command_args" | sed "s|^\./|$(pwd)/|" | sed "s|^\([^/]\)|$(pwd)/\1|g")
+
+        # Recombine the command name with the expanded arguments
+        local expanded_command="$command_name $expanded_args"
+
+        # Clear the last command from history to avoid duplication
+        history -d $(history 1 | awk '{print $1}')
+
+        # Append the modified command to history
+        history -s "$expanded_command"
+    fi
+}
+
+# Set PROMPT_COMMAND to call absolute_command before each command is logged
+PROMPT_COMMAND="absolute_command"
